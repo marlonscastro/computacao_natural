@@ -1,0 +1,12 @@
+import java.util.HashMap;
+
+public class Main {
+	public static void main(String[] args) {
+		HashMap<String, Double> passos = new HashMap<>();
+		passos.put("step_ind_ini", 0.1d);
+		passos.put("step_ind_final", 0.001d);
+		passos.put("step_vol_ini", 0.01d);
+		passos.put("step_vol_final", 0.001);
+	 //FSS f = new FSS(qPeixes, iteracoes, dimensions, c1, c2);
+	}
+}

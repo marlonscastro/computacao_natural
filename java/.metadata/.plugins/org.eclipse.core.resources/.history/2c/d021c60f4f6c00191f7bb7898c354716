@@ -1,0 +1,18 @@
+import java.util.Random;
+
+class Peixe{
+	private double[] posicao;
+	
+}
+
+class Cardume {
+	
+}
+
+public class Main {
+	public static void main(String[] args) {
+		
+
+	}
+
+}

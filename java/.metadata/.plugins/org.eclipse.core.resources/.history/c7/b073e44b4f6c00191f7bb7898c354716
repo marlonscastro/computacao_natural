@@ -1,0 +1,24 @@
+import java.util.Random;
+
+class Peixe{
+	private double[] posicao;
+	public Peixe(){
+		//Inicialize todos os peixes em posições xi(0) aleatórias e distantes do mínimo global;		
+		Random r;
+		//Inicialize aleatoriamente o peso ~wi(0) de todos os peixes;
+
+	}
+	
+}
+
+class Cardume {
+	
+}
+
+public class Main {
+	public static void main(String[] args) {
+		
+
+	}
+
+}
