@@ -1,3 +1,0 @@
-INDEX VERSION 1.129+/var/www/html/java/.metadata/.plugins/org.eclipse.jdt.core
-3472269279.index
-3356499298.index

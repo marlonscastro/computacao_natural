@@ -1,8 +1,0 @@
-1556742095735	Encapsulate field 'posicao'
-1556745960602	Rename field 'x'
-1556745969214	Rename field 'w'
-1556747269063	Rename local variable 'cosineValue'
-1556749379067	Encapsulate field 'pos'
-1556749384529	Encapsulate field 'peso'
-1556749388637	Encapsulate field 'fitness'
-1556752333308	Rename resource 'TCC_Luiz_Vercosa'
