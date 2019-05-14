@@ -27,7 +27,6 @@ class FSS {
 	public void executar(){
 		double[] posVizinhanca = new double[dim];
 		for(int i=0;i<this.iteracoes;i++){
-			
 			for (Peixe peixe : peixes) {// ->>>>>>> para cada peixe faça
 				//Encontre posição vizinha (2.1);
 				for (int j = 0; j < posVizinhanca.length; j++) {
