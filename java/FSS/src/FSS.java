@@ -43,7 +43,7 @@ class FSS {
 				}
 			}
 			
-			//Calcule o vetor do movimento instintivo utilizando (2.3); 	
+			//Calcule o vetor do movimento Coletivo instintivo utilizando (2.3); 	
 			
 			for (Peixe peixe : peixes) { //->>>>>>>>> para cada peixe faça
 				//Execute o movimento instintivo utilizando (2.5);	
