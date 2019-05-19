@@ -1,4 +1,12 @@
 class Functions {
+	public static double parabola(double[] dimension){
+		double fitness = 0;
+		for (int i = 0; i < dimension.length; i++) {
+			fitness += Math.pow(dimension[i], 2);
+		}
+		return fitness;
+	}
+	
 	public static double sphere(double[] dimension){
 		double fitness = 0;
 		for (int i = 0; i < dimension.length; i++) {

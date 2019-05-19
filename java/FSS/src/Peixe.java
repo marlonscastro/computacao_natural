@@ -4,7 +4,7 @@ class Peixe{
 	private double[] pos;		// posicao peixe
 	private double peso;		// peso peixe
 	private double fitness;
-	private double variacao_fitness;
+	private double variacaoFitness;
 	private double[] variacao_pos; // Variação das ultimas possicoes
 
 	public double[] getVariacao_pos() {
@@ -19,7 +19,7 @@ class Peixe{
 		//Inicialize todos os peixes em posições xi(0) aleatórias e distantes do mínimo global;
 		double x = 0;
 		for (int i = 0; i < valuePos; i++) {
-			x = ThreadLocalRandom.current().nextDouble(-1,1);
+			x = Constantes.U(-1, 1);
 			pos[i] = (x<0) ? x+(-4): x+4;
 			/**
 			 * Como o Minimo Global da Sphere é em {0,0,..} foi adicionado 4 para colocar o cardume
@@ -28,7 +28,7 @@ class Peixe{
 		}
 
 		//Inicialize aleatoriamente o peso ~wi(0) de todos os peixes;
-		this.setPeso(ThreadLocalRandom.current().nextDouble(1,10));
+		this.setPeso(Constantes.U(1,  10));
 		this.fitness = 0;
 	}
 	public double[] getPos() {
@@ -52,10 +52,11 @@ class Peixe{
 	public void setFitness(double fitness) {
 		this.fitness = fitness;
 	}
-	public double getVariacao_fitness() {
-		return variacao_fitness;
+	public double getVariacaoFitness() {
+		return variacaoFitness;
 	}
-	public void setVariacao_fitness(double variacao_fitness) {
-		this.variacao_fitness = variacao_fitness;
-	}	
+	public void setVariacaoFitness(double variacaoFitness) {
+		this.variacaoFitness = variacaoFitness;
+	}
+
 }
