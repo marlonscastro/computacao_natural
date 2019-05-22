@@ -1,11 +1,13 @@
-import java.util.concurrent.ThreadLocalRandom;
+
 
 class Peixe{
-	private double[] pos;		// posicao peixe
-	private double peso;		// peso peixe
-	private double fitness;
-	private double variacaoFitness;
-	private double[] variacao_pos; // Variação das ultimas possicoes
+	private double[] pos;			// posicao peixe
+	private double[] variacao_pos; 	// Variação das ultimas possicoes
+	private double peso;			// peso peixe
+	private double variacaoPeso;	// Variação no peso do Peixe
+	private double fitness;			// Fitness 
+	private double variacaoFitness;	// Variação do Fitness
+
 
 	public double[] getVariacao_pos() {
 		return variacao_pos;
@@ -13,12 +15,12 @@ class Peixe{
 	public void setVariacao_pos(double[] variacao_pos) {
 		this.variacao_pos = variacao_pos;
 	}
-	public Peixe(int valuePos){
-		pos = new double[valuePos];
-		variacao_pos = new double[valuePos];
+	public Peixe(int dimensoes){
+		pos = new double[dimensoes];
+		variacao_pos = new double[dimensoes];
 		//Inicialize todos os peixes em posições xi(0) aleatórias e distantes do mínimo global;
 		double x = 0;
-		for (int i = 0; i < valuePos; i++) {
+		for (int i = 0; i < dimensoes; i++) {
 			x = Constantes.U(-1, 1);
 			pos[i] = (x<0) ? x+(-4): x+4;
 			/**
@@ -36,14 +38,16 @@ class Peixe{
 	}
 	public void setPos(double[] novaPos) {
 		this.pos = novaPos;
-		for (int i = 0; i < novaPos.length; i++) {
-			variacao_pos[i] = novaPos[i] - this.pos[i];
+		for (int i = 0; i < pos.length; i++) {
+			variacao_pos[i] = this.pos[i] - novaPos[i];
 		}
 	}
 	public double getPeso() {
 		return peso;
 	}
 	public void setPeso(double peso) {
+		// Guarda a variacao do peso do peixe
+		this.variacaoPeso = peso - this.peso;
 		this.peso = peso;
 	}
 	public double getFitness() {
@@ -57,6 +61,12 @@ class Peixe{
 	}
 	public void setVariacaoFitness(double variacaoFitness) {
 		this.variacaoFitness = variacaoFitness;
+	}
+	public double getVariacaoPeso() {
+		return variacaoPeso;
+	}
+	public void setVariacaoPeso(double variacaoPeso) {
+		this.variacaoPeso = variacaoPeso;
 	}
 
 }

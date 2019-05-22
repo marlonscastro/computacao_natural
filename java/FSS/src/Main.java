@@ -1,8 +1,10 @@
+
 public class Main {
 	public static void main(String[] args) {
 		//FSS(Peixes, Iteracoes, Dimensoes, Problema);
-		FSS f= new FSS(30, 1000, 30, Constantes.SPHERE);
+		FSS f= new FSS(30, 1800, 10, Constantes.SPHERE);
 		f.executar();
+
 		
 		/* Sphere: (0,0,..) = 0
 		 * Rastrigin (0,0,..) = 0
@@ -12,9 +14,9 @@ public class Main {
 		
 		/*double[] valor = new double[30];
 		for (int i = 0; i < valor.length; i++) {
-			valor[i] = -2.4;
+			valor[i] = 0.2;
 		}
-		System.out.printf("f(valor): %f", Functions.sphere(valor));*/
-		
+		System.out.printf("f(valor): %f", Functions.rosenbrock(valor));
+		*/
 	}
 }
