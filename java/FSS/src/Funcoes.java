@@ -1,5 +1,5 @@
-class Functions {
-	public static double parabola(double[] dimension){
+class Funcoes {
+	public static Double parabola(double[] dimension){
 		double fitness = 0;
 		for (int i = 0; i < dimension.length; i++) {
 			fitness += Math.pow(dimension[i], 2);
@@ -7,7 +7,7 @@ class Functions {
 		return fitness;
 	}
 	
-	public static double sphere(double[] dimension){
+	public static Double sphere(double[] dimension){
 		double fitness = 0;
 		for (int i = 0; i < dimension.length; i++) {
 			fitness += Math.pow(dimension[i], 2);
@@ -15,7 +15,7 @@ class Functions {
 		return fitness;
 	}
 	
-	public static double rastrigin(double[] dimension){
+	public static Double rastrigin(double[] dimension){
 		double fitness = 0;
 		for (int i=0; i<dimension.length; i++){
 			double cos = Math.cos(2*Math.PI*dimension[i]);
@@ -25,7 +25,7 @@ class Functions {
 		return fitness;
 	}
 	
-	public static double rosenbrock(double[] dimension){
+	public static Double rosenbrock(double[] dimension){
 		double fitness = 0;
 		for (int i = 0; i < dimension.length-1; i++) {
 			double temp1 = (dimension[i] * dimension[i]) - dimension[i + 1];

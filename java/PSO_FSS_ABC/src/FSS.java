@@ -29,12 +29,12 @@ class FSS {
 	}
 	
 	// Executa o algoritmo 
-	public void executar(){
+	public ArrayList<Double> executar(){
 		double[] posVizinhanca = new double[dim];
 		baricentro = new double[dim];		
 		for(int i = 1;i <= this.iteracoes; i++){
 			// Só importa os Fitness da iteração atual 
-			fitness.clear();   
+			//fitness.clear();   
 			for (Peixe peixe : peixes) {    
 				// ->>>>>> para cada peixe faça
 				//Encontre posição vizinha (2.1);
@@ -79,7 +79,7 @@ class FSS {
 				else peixe.setVariacaoFitness(0.0);
 
 				
-				if((i % 50 == 0) && (!Double.isNaN(peixe.getPos()[0])) && (varFitness > 0)){
+				/*if((i % 50 == 0) && (!Double.isNaN(peixe.getPos()[0])) && (varFitness > 0)){
 					System.out.printf("it: %d >> PESO(%f), Pos=", i, peixe.getPeso());
 					for (int j = 0; j < peixe.getPos().length; j++) {
 						System.out.printf("|%.1f", peixe.getPos()[j]);
@@ -91,7 +91,7 @@ class FSS {
 						case 4:	System.out.printf("| FITNESS(%f) | varFitness(%f)\n", Funcoes.parabola(peixe.getPos()), varFitness); break;
 						default :;
 					}
-				}
+				}*/
 			}
 			
 			//Calcule o vetor do movimento Coletivo instintivo utilizando (2.3); 	
@@ -149,6 +149,7 @@ class FSS {
 			S_vol -= (S_vol - S_vol_final)/iteracoes;
 			
 		}
+		return this.fitness;
 	}
 	private Double modulo(ArrayList<Double> a){
 		ArrayList<Double> novo = new ArrayList<Double>();

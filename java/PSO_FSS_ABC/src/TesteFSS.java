@@ -1,8 +1,8 @@
 
-public class Main {
+public class TesteFSS {
 	public static void main(String[] args) {
 		//FSS(Peixes, Iteracoes, Dimensoes, Problema);
-		FSS f= new FSS(30, 1800, 10, Constantes.SPHERE);
+		FSS f= new FSS(30, 50000, 10, Constantes.SPHERE);
 		f.executar();
 
 		
@@ -12,11 +12,11 @@ public class Main {
 		 * parabola (0,0,..) = 0
 		 */
 		
-		/*double[] valor = new double[30];
+		/*double[] valor = new double[10];
 		for (int i = 0; i < valor.length; i++) {
-			valor[i] = 0.2;
+			valor[i] = 5;
 		}
-		System.out.printf("f(valor): %f", Functions.rosenbrock(valor));
+		System.out.printf("f(valor): %f", Functions.rastrigin(valor));
 		*/
 	}
 }
