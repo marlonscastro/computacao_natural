@@ -1,6 +1,4 @@
-import java.security.cert.PKIXBuilderParameters;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ACO {
 	private ArrayList<Caminho> melhorSolucao;
@@ -63,29 +61,35 @@ public class ACO {
 		 */
 		
 		// para t = 1 a numero de iterações
-		System.out.println("ROTA     d       Thao    n_xy     Thao/1/d      p(xy)");
+
 		Double s = 0d;
-		for (int x = 0; x < iteracoes; x++) {
+		for (int x = 1; x <= iteracoes; x++) {
+			System.out.printf("################### %da ITERAÇÃO #####################\n", x);			
+			System.out.println("ROTA     d       Thao     n_xy     Thao*n_xy    p(xy)    p(%)");			
 			// Atualiza probabilidades
 			for (Caminho caminho : caminhos) {
 				Pk_ij = caminho.getThao_xy()*caminho.getFeromonio();
-				//System.out.printf("%.3f\n", Pk_ij);
+				s = 0d;
 				for (Caminho ctemp : caminhos) {
-					if(caminho.getOrigem().equals(ctemp.getOrigem())){
+					if(caminho.getOrigem().equals(ctemp.getOrigem()) || caminho.getOrigem().equals(ctemp.getDestino())){
 						s += ctemp.getThao_xy()*ctemp.getFeromonio();
-						//System.out.printf("%.3f\n", ctemp.getThao_xy()*ctemp.getFeromonio());	
+						System.out.printf("%s : %.5f ## ", ctemp.getRota(), ctemp.getThao_xy()*ctemp.getFeromonio()); 						
 					}
 				}
+				System.out.println();
 
 				Pk_ij /= s;
-				System.out.printf("%s   %.3f    %.3f    %.3f    %.3f       %.3f\n", 
+				caminho.setProbabilidade(Pk_ij);
+				System.out.printf("%s   %.3f    %.3f    %.3f    %.7f    %.3f    %.1f\n", 
 						caminho.getRota(), 
 						caminho.getDistancia(), 
 						caminho.getThao_xy(),
 						caminho.getFeromonio(), // n_xy
 						caminho.getThao_xy()*caminho.getFeromonio(),
-						Pk_ij);
-				caminho.setProbabilidade(Pk_ij);
+						caminho.getProbabilidade(),
+						caminho.getProbabilidade()*100
+						);
+				System.out.println("-----------------------------------------------------------");
 			}
 			
 			// para k = 1 até m 
